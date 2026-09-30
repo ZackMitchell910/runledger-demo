@@ -4,11 +4,11 @@
 
 A tiny, real, reproducible demo of [RunLedger](https://github.com/runledger/Runledger), an open-source CI harness for tool-using AI agents, blocking a pull request.
 
-**The failing PR:** [#1: Agent: skip order lookup before refund](https://github.com/ZackMitchell910/runledger-demo/pull/1) · [red CI run](https://github.com/ZackMitchell910/runledger-demo/actions/runs/36752836258)
+**The failing PR:** [#1: Agent: skip order lookup before refund](https://github.com/ZackMitchell910/runledger-demo/pull/1) · [red CI run](https://github.com/ZackMitchell910/runledger-demo/actions/runs/36759236066)
 
 ![RunLedger failing the PR on a tool-order violation](docs/failing-pr.png)
 
-<sub>Rendered from the actual job log of PR #1 (Actions run 36752836258). It is not a mockup.</sub>
+<sub>Rendered from the actual job log of PR #1 (Actions run 36759236066). It is not a mockup.</sub>
 
 ## The 60-second version
 
