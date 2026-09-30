@@ -1,0 +1,114 @@
+{
+  "aggregates": {
+    "cases_error": 0,
+    "cases_fail": 0,
+    "cases_pass": 1,
+    "cases_total": 1,
+    "metrics": {
+      "cost_usd": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "p50": null,
+        "p95": null
+      },
+      "steps": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "p50": null,
+        "p95": null
+      },
+      "tokens_in": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "p50": null,
+        "p95": null
+      },
+      "tokens_out": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "p50": null,
+        "p95": null
+      },
+      "tool_calls": {
+        "max": 2.0,
+        "mean": 2.0,
+        "min": 2.0,
+        "p50": 2.0,
+        "p95": 2.0
+      },
+      "tool_errors": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "p50": 0.0,
+        "p95": 0.0
+      },
+      "wall_ms": {
+        "max": 32.0,
+        "mean": 32.0,
+        "min": 32.0,
+        "p50": 32.0,
+        "p95": 32.0
+      }
+    },
+    "pass_rate": 1.0
+  },
+  "cases": [
+    {
+      "assertions": {
+        "failed": 0,
+        "total": 3
+      },
+      "cost_usd": null,
+      "failed_assertions": null,
+      "failure_reason": null,
+      "id": "refund_delivered_order",
+      "replay": {
+        "cassette_path": "evals/refund/cassettes/refund_delivered_order.jsonl",
+        "cassette_sha256": "43ad4f22f2985a293aad4fe3a5e97f6cada9e840dba968a33e28960d16fe89f8"
+      },
+      "status": "pass",
+      "steps": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tool_calls": 2,
+      "tool_calls_by_name": {
+        "issue_refund": 1,
+        "lookup_order": 1
+      },
+      "tool_errors": 0,
+      "tool_errors_by_name": {},
+      "wall_ms": 32
+    }
+  ],
+  "generated_at": "2026-09-30T17:35:05.512132Z",
+  "policy_snapshot": {
+    "thresholds": {
+      "min_pass_rate": 1.0
+    }
+  },
+  "run": {
+    "ci": null,
+    "exit_status": "success",
+    "git_sha": null,
+    "mode": "replay",
+    "run_id": "20260930-173505-9a971d"
+  },
+  "runledger_version": "0.2.0",
+  "schema_version": 1,
+  "suite": {
+    "agent_command": [
+      "python",
+      "evals/refund/agent/agent.py"
+    ],
+    "cases_total": 1,
+    "name": "refund-agent",
+    "suite_config_hash": null,
+    "suite_path": "evals/refund/suite.yaml",
+    "tool_mode": "replay"
+  }
+}

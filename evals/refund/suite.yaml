@@ -1,0 +1,28 @@
+suite_name: refund-agent
+agent_command: ["python", "agent/agent.py"]
+mode: replay
+cases_path: cases
+tool_registry:
+  - lookup_order
+  - issue_refund
+# Only used when re-recording cassettes (see README). CI replays cassettes.
+tool_module: demo_tools
+
+assertions:
+  # Output contract
+  - type: json_schema
+    schema_path: schema.json
+  # Tool-order contract: never refund an order you haven't looked up.
+  - type: must_call
+    tools: ["lookup_order", "issue_refund"]
+  - type: call_order
+    order: ["lookup_order", "issue_refund"]
+
+budgets:
+  max_tool_calls: 2
+  max_tool_errors: 0
+
+regression:
+  min_pass_rate: 1.0
+
+baseline_path: ../../baselines/refund-agent.json

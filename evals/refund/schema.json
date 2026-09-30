@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "decision": {"type": "string", "enum": ["refund", "deny"]},
+    "order_id": {"type": "string"},
+    "refund_id": {"type": ["string", "null"]},
+    "reply": {"type": "string"}
+  },
+  "required": ["decision", "order_id", "refund_id", "reply"],
+  "additionalProperties": false
+}

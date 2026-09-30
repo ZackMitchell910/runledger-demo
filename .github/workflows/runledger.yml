@@ -1,0 +1,36 @@
+name: runledger
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  agent-evals:
+    name: runledger (replay)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install RunLedger from PyPI
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install runledger==0.2.0
+
+      - name: Run agent evals (deterministic replay, no API keys)
+        run: runledger run evals/refund --mode replay
+
+      - name: Explain failure
+        if: failure()
+        run: python scripts/explain_failures.py
+
+      - name: Upload RunLedger artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: runledger-artifacts
+          path: runledger_out/**

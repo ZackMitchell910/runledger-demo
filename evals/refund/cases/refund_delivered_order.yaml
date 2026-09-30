@@ -1,0 +1,7 @@
+id: refund_delivered_order
+description: "Customer asks for a refund on a delivered, refundable order"
+input:
+  order_id: "A-1001"
+  message: "My headphones arrived broken, please refund order A-1001 ($49)."
+  claimed_amount_usd: 49.0
+cassette: cassettes/refund_delivered_order.jsonl

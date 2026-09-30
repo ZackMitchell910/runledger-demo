@@ -1,0 +1,2 @@
+{"args": {"order_id": "A-1001"}, "ok": true, "result": {"amount_usd": 49.0, "order_id": "A-1001", "refundable": true, "status": "delivered"}, "tool": "lookup_order"}
+{"args": {"amount_usd": 49.0, "order_id": "A-1001"}, "ok": true, "result": {"amount_usd": 49.0, "refund_id": "R-A-1001", "status": "issued"}, "tool": "issue_refund"}
